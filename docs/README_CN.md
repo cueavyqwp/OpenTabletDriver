@@ -75,8 +75,12 @@ OpenTabletDriver 由两个独立进程协同工作：守护进程`OpenTabletDriv
 
 #### MacOS
 
-构建 OpenTabletDriver 需要较新版本的 Bash 和 Coreutils，您可以使用 Homebrew 来安装
-运行 `PATH="$(brew --prefix coreutils)/libexec/gnubin:$PATH" $(brew --prefix)/bin/bash ./eng/bash/package.sh -r osx-x64`
+| 包格式   | 命令                                                                    |
+| -------- | ----------------------------------------------------------------------- |
+| 未签名包 | `./eng/bash/package.sh --runtime osx-x64 --package macos`               |
+| 签名包   | `./eng/bash/package.sh --signed true --runtime osx-x64 --package macos` |
+
+在 Linux 或 Windows 上构建签名的 MacOS 构建时需要 `rcodesign`
 
 # 功能
 
